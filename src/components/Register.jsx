@@ -41,7 +41,6 @@ const Register = () => {
         password: values.password,
         role: values.role,
       });
-      // Auto-login después del registro (se valora en la letra)
       const data = await loginApi(values.email, values.password);
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));

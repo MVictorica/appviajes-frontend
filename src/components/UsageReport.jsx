@@ -5,7 +5,6 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 const PLUS_LIMIT = 4;
 
 const UsageReport = () => {
-  // Lee del store con useSelector (comentario 12 del docente)
   const trips = useSelector((state) => state.tripsSlice);
   const user = JSON.parse(localStorage.getItem("user"));
 

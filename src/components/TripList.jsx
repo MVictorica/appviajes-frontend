@@ -27,7 +27,6 @@ const TripList = () => {
     const [tituloEditado, setTituloEditado] = useState("");
     const [errorMsg, setErrorMsg] = useState(null);
 
-    // Filtros (comentario 4.2.4 de la letra)
     const tripsFiltrados = trips.filter((trip) => {
         const categoriaId = trip?.category?._id || trip?.category;
         const okCategoria = !filtroCategoria || categoriaId === filtroCategoria;
@@ -38,7 +37,6 @@ const TripList = () => {
     });
 
     const handleEliminar = async (id) => {
-        // Confirmación antes de borrar (comentario 16)
         const confirmar = window.confirm("¿Seguro que querés eliminar este viaje?");
         if (!confirmar) return;
 
@@ -91,7 +89,6 @@ const TripList = () => {
                 <Card.Title>🧳 Mis viajes</Card.Title>
                 {errorMsg && <Alert variant="danger">{errorMsg}</Alert>}
 
-                {/* Filtros */}
                 <div className="d-flex gap-2 mb-3">
                     <Form.Select
                         value={filtroCategoria}

@@ -38,7 +38,6 @@ const TripForm = () => {
             dispatch(startLoading());
 
             let imageUrl = "";
-            // Si hay imagen seleccionada, subirla primero a Vercel Blob
             if (imagen) {
                 const blob = await upload(imagen.name, imagen, {
                     access: "public",

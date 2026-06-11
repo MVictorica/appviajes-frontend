@@ -26,23 +26,21 @@ api.interceptors.response.use(
   }
 );
 
-// ---------- AUTH ----------
 export const loginApi = async (email, password) => {
   const response = await api.post("/auth/login", { email, password });
-  return response.data; // { token, user }
+  return response.data;
 };
 
 export const registerApi = async (userData) => {
   const response = await api.post("/auth/register", userData);
-  return response.data; // { user }
+  return response.data;
 };
 
 export const upgradePlanApi = async () => {
   const response = await api.patch("/auth/upgrade");
-  return response.data; // { message, user }
+  return response.data;
 };
 
-// ---------- TRIPS ----------
 export const obtenerTripsApi = async (signal) => {
   const response = await api.get("/trips?limit=100", { signal });
   return response?.data?.trips || [];
@@ -63,22 +61,19 @@ export const eliminarTripApi = async (id, signal) => {
   return response.data;
 };
 
-// ---------- CATEGORIES ----------
 export const obtenerCategoriesApi = async (signal) => {
   const response = await api.get("/categories", { signal });
   return response?.data?.categories || [];
 };
 
-// ---------- AI ----------
 export const generarDescripcionApi = async (destination, style) => {
   const response = await api.post("/ai/generate-description", {
     destination,
     style,
   });
-  return response.data; // { success, description }
+  return response.data;
 };
 
-// ---------- COUNTRIES ----------
 export const obtenerPaisApi = async (country) => {
   const response = await api.get(`/countries/${country}`);
   return response.data.info;

@@ -22,7 +22,6 @@ const PlanUpgrade = () => {
       const userActualizado = { ...user, plan: "premium" };
       localStorage.setItem("user", JSON.stringify(userActualizado));
       setUser(userActualizado);
-      // Recargamos para que todos los componentes tomen el nuevo plan
       window.location.reload();
     } catch (error) {
       setErrorMsg(error.message);

@@ -26,7 +26,6 @@ const Dashboard = () => {
     const [checkingAuth, setCheckingAuth] = useState(true);
     const user = JSON.parse(localStorage.getItem("user"));
 
-    // Validación del token (igual que en clase)
     useEffect(() => {
         const token = localStorage.getItem("token");
 
@@ -63,7 +62,6 @@ const Dashboard = () => {
         }
     }, [navigate]);
 
-    // Carga inicial de datos: UNA SOLA VEZ (comentario 15 del docente)
     useEffect(() => {
         if (checkingAuth) return;
 
@@ -103,7 +101,6 @@ const Dashboard = () => {
 
     return (
         <Container fluid className="py-4 px-4" style={{ maxWidth: "1400px" }}>
-            {/* Header */}
             <header className="d-flex justify-content-between align-items-center mb-4">
                 <div>
                     <h1 className="h3 mb-0">✈️ AppViajes</h1>
@@ -116,9 +113,7 @@ const Dashboard = () => {
                 </Button>
             </header>
 
-            {/* Todo el dashboard en UNA SOLA PANTALLA */}
             <Row className="g-4">
-                {/* Columna izquierda: form + informe de uso + plan */}
                 <Col lg={4}>
                     <TripForm />
                     <div className="mt-4">
@@ -132,7 +127,6 @@ const Dashboard = () => {
                     </div>
                 </Col>
 
-                {/* Columna derecha: listado + gráfico */}
                 <Col lg={8}>
                     <TripList />
                     <div className="mt-4">

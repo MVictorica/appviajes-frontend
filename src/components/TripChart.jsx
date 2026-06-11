@@ -13,7 +13,6 @@ const TripChart = () => {
   const trips = useSelector((state) => state.tripsSlice);
   const categories = useSelector((state) => state.categoriesSlice);
 
-  // Agrupar viajes por categoría
   const data = categories.map((cat) => {
     const count = trips.filter((trip) => {
       const categoriaId = trip?.category?._id || trip?.category;
